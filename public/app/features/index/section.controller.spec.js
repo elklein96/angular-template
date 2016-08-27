@@ -1,5 +1,5 @@
 'use strict';
-var $compile, $scope, $controller;
+var $scope, $controller;
 
 describe('Template Controller', function() {
 

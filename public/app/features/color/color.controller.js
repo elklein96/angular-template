@@ -9,8 +9,6 @@
 
     /* @ngInject */
     function colorController($scope, $route, $routeParams, templateFactory){
-    	console.log("color");
-
     	$scope.color = $routeParams.color;
     }
 
