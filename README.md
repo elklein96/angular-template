@@ -26,6 +26,8 @@ This is a template application that employs the MEAN Stack architecture.
 
 1. Create unit tests with file name `file.being.tested.spec.js`
 
-2. Run `grunt test`
+2. Run `grunt test` to run the Karma server
+
+3. Run `grunt analyze` to start `jshint`
 
 And that's it! Have fun!
