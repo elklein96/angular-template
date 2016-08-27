@@ -11,15 +11,16 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-shell-spawn');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     shell: {
       mongo: {
-          command: "sh bin/start-mongo.sh",
-          options: {
-            async: true
-          }
-      },
+        command: "sh bin/start-mongo.sh",
+        options: {
+          async: true
+        }
+      }
     },
     develop: {
       server: {
@@ -66,7 +67,7 @@ module.exports = function (grunt) {
       }
     },
     jshint: {
-      all: ['public/app/**/*.js'],
+      src: ['public/app/**/*.js'],
       options : {
         jshintrc: true
       }

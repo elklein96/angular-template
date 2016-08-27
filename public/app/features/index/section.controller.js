@@ -9,8 +9,6 @@
 
     /* @ngInject */
     function templateController($scope){
-    	console.log("section");
-
     	$scope.foo = "bar";
     }
 
