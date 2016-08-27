@@ -1,12 +1,16 @@
 module.exports = function(config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine'],
+    frameworks: ['mocha', 'chai'],
     files: [
         'public/bower_components/angular/angular.min.js',
         'public/bower_components/angular-mocks/angular-mocks.js',
-        'public/app/*.js',
-        'public/app/**/*.js'
+        'public/bower_components/angular-route/angular-route.min.js',
+        'public/app/app.js',
+        'public/app/**/*.module.js',
+        'public/app/**/*.controller.js',
+        'public/app/**/*.directive.js',
+        'public/app/**/*.spec.js',
     ],
     exclude: [
     ],
@@ -18,7 +22,14 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
     autoWatch: false,
     browsers: ['PhantomJS'],
-    singleRun: false,
-    concurrency: Infinity
+    singleRun: true,
+    concurrency: Infinity,
+    plugins: [
+        'karma-phantomjs-launcher',
+        'karma-mocha',
+        'karma-sinon',
+        'karma-chai',
+        'karma-jasmine'
+    ]
   })
 }

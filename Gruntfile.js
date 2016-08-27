@@ -9,6 +9,7 @@ module.exports = function (grunt) {
   var reloadPort = 35729, files;
 
   grunt.loadNpmTasks('grunt-shell-spawn');
+  grunt.loadNpmTasks('grunt-karma');
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     shell: {
@@ -17,7 +18,7 @@ module.exports = function (grunt) {
           options: {
             async: true
           }
-      }
+      },
     },
     develop: {
       server: {
@@ -57,6 +58,11 @@ module.exports = function (grunt) {
           livereload: reloadPort
         }
       }
+    },
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js'
+      }
     }
   });
 
@@ -81,7 +87,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'develop',
-    'shell',
+    'shell:mongo',
     'watch'
   ]);
 
@@ -95,7 +101,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('test', [
-    'shell:karma'
+    'karma'
   ]);
 
 };

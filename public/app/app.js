@@ -12,7 +12,6 @@
 
         /* @ngInject */
         function configuration($routeProvider, $locationProvider) {
-
             $routeProvider
             .when('/', {
 		    	templateUrl: 'app/features/index/section.html',

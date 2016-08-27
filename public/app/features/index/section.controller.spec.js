@@ -1,21 +1,21 @@
 'use strict';
-var $compile, $scope, element;
+var $compile, $scope, $controller;
 
-describe('Template Controller ', function() {
+describe('Template Controller', function() {
 
-    beforeEach(function() {
-        module('templateApp.main');
+    beforeEach(module('templateApp.main'));
 
-        $scope = $rootScope.$new();
+    beforeEach(inject(function(_$controller_) {
+        $scope = {
+            foo : ""
+        };
         
-        controller = $controller('templateController', {
+        $controller = _$controller_('templateController', {
             $scope: $scope
         });
-
-        $scope.$apply();
-    });
+    }));
 
     it('Template Controller should exist', inject(function() {
-        expect($scope.foo).to.be.defined;
+        expect($scope.foo).to.be.equal('bar');
     }));
 });
