@@ -20,4 +20,12 @@ This is a template application that employs the MEAN Stack architecture.
   
   - Note: the default grunt task starts both the Mongo Daemon and the Express Server.
 
+## Testing
+
+  - This project contains configurations for the Karma test runner, Mocha test framework, Chai assertion library, and Sinon (great for creating stubs and specs for Angular unit tests).
+
+1. Create unit tests with file name `file.being.tested.spec.js`
+
+2. Run `grunt test`
+
 And that's it! Have fun!
