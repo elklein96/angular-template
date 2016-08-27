@@ -28,8 +28,7 @@ module.exports = function(config) {
         'karma-phantomjs-launcher',
         'karma-mocha',
         'karma-sinon',
-        'karma-chai',
-        'karma-jasmine'
+        'karma-chai'
     ]
   })
 }
