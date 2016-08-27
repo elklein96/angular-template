@@ -17,7 +17,7 @@ module.exports = function (grunt) {
           options: {
             async: true
           }
-      },
+      }
     },
     develop: {
       server: {
@@ -84,4 +84,18 @@ module.exports = function (grunt) {
     'shell',
     'watch'
   ]);
+
+  grunt.registerTask('no-db', [
+    'develop',
+    'watch'
+  ]);
+
+  grunt.registerTask('analyze', [
+    'shell:jshint'
+  ]);
+
+  grunt.registerTask('test', [
+    'shell:karma'
+  ]);
+
 };

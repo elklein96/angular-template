@@ -7,7 +7,8 @@ var db_url = process.env.MONGOHQ_URL || "mongodb://localhost:27017/test",
 
 var recordSchema = new Schema({
     id      : ObjectId,
-    foo     : String
+    foo     : String,
+    bar 	: String
 });
 
-var record = db.model('record', recordSchema);
+var Record = db.model('record', recordSchema);

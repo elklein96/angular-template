@@ -6,18 +6,44 @@
         .factory('templateFactory', ['$http', '$q', function($http, $q) {
         
 	    	var service = {
-	    		foo: fooMethod, 
-	    		bar: barMethod 
+	    		fetch: fetch, 
+	    		change: change,
+	    		create: create,
+	    		remove: remove
 	    	};
 
 	    	return service;
 
-	        function fooMethod() {
-	        	return "foo";
+	        function fetch() {
+	        	return $http.get("/api")
+	        		.then(success)
+	        		.catch(error);
 	        }
 
-	        function barMethod() {
-	        	return "bar";
+	        function change() {
+	        	return $http.put("/api")
+	        		.then(success)
+	        		.catch(error);
+	        }
+
+	        function create() {
+	        	return $http.post("/api")
+	        		.then(success)
+	        		.catch(error);
+	        }
+
+	        function remove() {
+	        	return $http.delete("/api")
+	        		.then(success)
+	        		.catch(error);
+	        }
+
+	        function success(res) {
+	        	return res.data;
+	        }
+
+	        function error(err) {
+	        	return $q.reject(err);
 	        }
     	}]);
 })();

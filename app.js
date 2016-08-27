@@ -10,6 +10,7 @@ app.set('port', process.env.PORT || 8080);
 app.use("/app", express.static(__dirname + "/public/app"));
 app.use("/img", express.static(__dirname + "/public/app/img"));
 app.use("/css", express.static(__dirname + "/public/css"));
+app.use("/bower_components", express.static(__dirname + "/public/bower_components"));
 
 app.get('/api', routes.fetch);
 app.put('/api', routes.change);
