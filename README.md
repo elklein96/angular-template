@@ -12,7 +12,7 @@ This is a template application that employs the MEAN Stack architecture.
 
 1. Clone this repo: `git clone https://github.com/elklein96/angular-template`
 
-2. Install some dependencies: `npm install`
+2. Install some dependencies: `npm install && bower install`
 
 3. Install Grunt locally: `npm install -g grunt-cli`
 
