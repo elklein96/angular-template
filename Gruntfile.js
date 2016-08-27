@@ -10,6 +10,7 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-shell-spawn');
   grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     shell: {
@@ -63,6 +64,12 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'karma.conf.js'
       }
+    },
+    jshint: {
+      all: ['public/app/**/*.js'],
+      options : {
+        jshintrc: true
+      }
     }
   });
 
@@ -97,7 +104,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('analyze', [
-    'shell:jshint'
+    'jshint'
   ]);
 
   grunt.registerTask('test', [

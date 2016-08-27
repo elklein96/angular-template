@@ -31,6 +31,9 @@ node_modules
 jspm_packages
 public/bower_components
 
+# Code coverage reporting
+coverage
+
 # Optional npm cache directory
 .npm
 
